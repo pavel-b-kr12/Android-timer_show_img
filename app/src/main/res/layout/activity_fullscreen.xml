@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="?attr/fullscreenBackgroundColor"
+	android:theme="@style/ThemeOverlay.Timer_showQR1.FullscreenContainer"
+	tools:context=".FullscreenActivity">
+
+	<RelativeLayout
+		android:id="@+id/fullscreen_content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+			android:background="@color/colorBackground">
+
+
+		<TextView
+			android:id="@+id/text_info"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginTop="-440dp"
+			android:gravity="center"
+			android:keepScreenOn="true"
+			android:text="@string/dummy_content"
+			android:textColor="?attr/fullscreenTextColor"
+			android:textSize="45sp"
+			android:textStyle="bold"
+
+			android:visibility="invisible" />
+
+		<ProgressBar
+			android:id="@+id/progressBarCircle"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="280dp"
+			android:layout_height="280dp"
+			android:layout_centerInParent="true"
+			android:background="@drawable/drawable_circle_dark_blue"
+			android:indeterminate="false"
+			android:max="100"
+			android:progress="100"
+			android:progressDrawable="@drawable/drawable_circle_yellow"
+			android:rotation="-90"
+
+			/>
+
+		<EditText
+			android:id="@+id/editTextMinute"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_above="@+id/textViewTime"
+			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="10dp"
+			android:gravity="center"
+			android:hint="@string/hint_minute"
+			android:inputType="number"
+			android:maxLength="15"
+			android:maxLines="1"
+			android:minEms="5"
+			android:text="1"
+			android:textColor="@color/colorYellow"
+			android:textColorHint="@color/colorYellow"
+			android:visibility="gone"
+			/>
+
+		<TextView
+			android:id="@+id/textViewTime"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:onClick="shoqQR"
+			android:text=" сканувати\n       QR"
+			android:textColor="@color/colorYellow"
+			android:textSize="44sp" />
+
+		<ImageView
+			android:id="@+id/imageViewReset"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:layout_below="@+id/textViewTime"
+			android:layout_centerInParent="true"
+			android:layout_marginTop="30dp"
+			android:src="@drawable/icon_reset"
+			android:visibility="gone"
+			/>
+
+		<ImageView
+			android:id="@+id/imageViewStartStop"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_below="@+id/progressBarCircle"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="20dp"
+			android:src="@drawable/icon_start"
+
+			android:visibility="gone" />
+
+		<ImageView
+			android:id="@+id/imageViewQR"
+			android:layout_width="200dp"
+			android:layout_height="200dp"
+			android:layout_below="@+id/progressBarCircle"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="-235dp"
+			android:alpha="0.02"
+			android:src="@drawable/ic_qr_code" />
+
+
+
+		<Button
+			android:id="@+id/button"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:text=""
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			android:onClick="back"
+			/>
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:fitsSystemWindows="true">
+
+			<LinearLayout
+				android:id="@+id/fullscreen_content_controls"
+				style="@style/Widget.Theme.Timer_showQR1.ButtonBar.Fullscreen"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="bottom|center_horizontal"
+				android:orientation="horizontal"
+				tools:ignore="UselessParent">
+
+				<Button
+					android:id="@+id/dummy_button"
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="x" />
+
+			</LinearLayout>
+
+
+		</FrameLayout>
+
+	</RelativeLayout>
+
+
+	<!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+</FrameLayout>

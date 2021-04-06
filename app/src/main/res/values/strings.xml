@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">timer_showQR1</string>
+	<string name="dummy_button">Dummy Button</string>
+	<string name="dummy_content">Очiкуйте\nQR код доступу\nдо контролю</string>
+
+	<string name="hint_minute">Minute</string>
+	<string name="message_minutes">Please Enter Minutes...</string>
+</resources>
